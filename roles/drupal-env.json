@@ -4,6 +4,13 @@
     "json_class": "Chef::Role",
     "description": "Drupal environment configuration.",
     "run_list": [
-        "recipe[lamp]"
-    ]
+        "recipe[drupal-env]"
+    ],
+    "default_attributes": {
+        "mysql": {
+            "server_root_password": "root",
+            "server_repl_password": "",
+            "server_debian_password": ""
+        }
+    }
 }
