@@ -2,6 +2,8 @@ drupal-env
 ==========
 
 Drupal environment with Berkshelf Chef and Vagrant support
+* Master: [![Build Status](https://api.travis-ci.org/sergiuionescu/drupal-env.svg?branch=master)](http://travis-ci.org/sergiuionescu/drupal-env)
+* Dev: [![Build Status](https://api.travis-ci.org/sergiuionescu/drupal-env.svg?branch=dev)](http://travis-ci.org/sergiuionescu/drupal-env)
 
 Note
 ----
