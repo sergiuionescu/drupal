@@ -14,5 +14,5 @@ template "/etc/mysql/drupal-grants.sql" do
       :password => node['drupal-env']['site-install']['db-url']['password'],
       :database => node['drupal-env']['site-install']['db-url']['schema']
   )
-  notifies :run, resources(:execute => "mysql-install-drupal-privileges"), :immediately
+  notifies :run, 'execute[mysql-install-drupal-privileges]', :immediately
 end
