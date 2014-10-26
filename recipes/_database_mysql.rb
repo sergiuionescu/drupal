@@ -4,6 +4,11 @@ mysql_connection_info = {:host => node['drupal-env']['site-install']['db-url']['
                          :username => 'root',
                          :password => node['mysql']['server_root_password']}
 
+mysql_database node['drupal-env']['site-install']['db-url']['database'] do
+  connection mysql_connection_info
+  action :create
+end
+
 mysql_database_user node['drupal-env']['site-install']['db-url']['user'] do
   connection mysql_connection_info
   password node['drupal-env']['site-install']['db-url']['password']
@@ -11,3 +16,4 @@ mysql_database_user node['drupal-env']['site-install']['db-url']['user'] do
   privileges [:select,:update,:insert]
   action :grant
 end
+
