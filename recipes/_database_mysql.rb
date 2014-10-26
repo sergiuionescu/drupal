@@ -13,7 +13,7 @@ mysql_database_user node['drupal-env']['site-install']['db-url']['user'] do
   connection mysql_connection_info
   password node['drupal-env']['site-install']['db-url']['password']
   database_name node['drupal-env']['site-install']['db-url']['database']
-  privileges [:select,:update,:insert]
+  privileges [:all]
   action :grant
 end
 
