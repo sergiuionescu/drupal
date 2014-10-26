@@ -14,7 +14,7 @@ default['drupal-env']['site-install']['db-url']['user'] = 'drupal'
 #Database password used
 default['drupal-env']['site-install']['db-url']['password'] = 'drupal'
 #Database host used
-default['drupal-env']['site-install']['db-url']['host'] = '127.0.01'
+default['drupal-env']['site-install']['db-url']['host'] = '127.0.0.1'
 #Database schema/database name
 default['drupal-env']['site-install']['db-url']['database'] = 'drupal'
 
