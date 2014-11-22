@@ -9,3 +9,4 @@ version          '0.1.0'
 depends "lamp", "~> 0.1.4"
 depends "drush", "~> 0.1.0"
 depends "database", "~> 2.3.0"
+depends "php"

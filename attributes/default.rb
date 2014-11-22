@@ -1,6 +1,8 @@
 
 default['drupal-env']['dir'] = '/var/www/drupal'
-default['drupal-env']['version'] = '8.0.0-beta2'
+default['drupal-env']['version'] = '8'
+
+default['drupal-env']['aliases'] = ['drupal.local']
 
 #uid1 email. Defaults to admin@example.com
 default['drupal-env']['site-install']['account-mail'] = 'admin@example.com'
@@ -8,8 +10,6 @@ default['drupal-env']['site-install']['account-mail'] = 'admin@example.com'
 default['drupal-env']['site-install']['account-name'] = 'admin'
 #uid1 pass. Defaults to admin
 default['drupal-env']['site-install']['account-pass'] = 'admin'
-#Defaults to 1
-default['drupal-env']['site-install']['clean-url'] = '1'
 #Database service used as the drupal backend. This cookbook does not currently install any other service than mysql.
 default['drupal-env']['site-install']['db-url']['service'] = 'mysql'
 #Database user used
