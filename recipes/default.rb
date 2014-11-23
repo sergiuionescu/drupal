@@ -4,6 +4,11 @@
 #
 # Copyright (c) 2014 The Authors, All Rights Reserved.
 
+#Cover the provisioning dependency for ruby-dev
+package "ruby-dev" do
+  action :install
+end
+
 include_recipe 'lamp'
 include_recipe 'drush'
 include_recipe 'php::module_gd'
@@ -45,6 +50,10 @@ execute "drush-site-install" do
   #{node['drupal-env']['site-install']['sites-subdir'].empty? ? '' : '--sites-subdir='}#{node['drupal-env']['site-install']['sites-subdir']} \
   #{node['drupal-env']['site-install']['locale'].empty? ? '' : '--locale='}#{node['drupal-env']['site-install']['locale']}"
   not_if "drush -r #{node['drupal-env']['dir']} status | grep #{node['drupal-env']['version']}"
+end
+
+execute "drupal-permissions" do
+  command "chown www-data:www-data -R #{node['drupal-env']['dir']}"
 end
 
 web_app "drupal" do

@@ -21,7 +21,8 @@ Extra development requirements
 * vagrant-berkshelf (vagrant plugin install vagrant-berkshelf)
 * chef dk >= 0.2.0
 * virtualbox: tested on 4.1.14
- 
+
+* Note: there is currently an issue with running provision a second time with vagrant-berkshelf 4.0.0. See https://github.com/berkshelf/vagrant-berkshelf/issues/237
 
 Resources links
 ---------------
