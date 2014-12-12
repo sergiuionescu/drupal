@@ -12,6 +12,8 @@ end
 include_recipe 'lamp'
 include_recipe 'drush'
 include_recipe 'php::module_gd'
+include_recipe 'cron'
+
 package "php5-json" do
   action :install
 end
@@ -53,7 +55,7 @@ execute "drush-site-install" do
 end
 
 execute "drupal-permissions" do
-  command "chown www-data:www-data -R #{node['drupal-env']['dir']}"
+  command "chown #{node['apache']['user']}:#{node['apache']['group']} -R #{node['drupal-env']['dir']}"
 end
 
 web_app "drupal" do
@@ -61,6 +63,11 @@ web_app "drupal" do
   docroot node['drupal-env']['dir']
   server_name node['fqdn']
   server_aliases node['drupal-env']['aliases']
+end
+
+cron_d 'drupal-cron' do
+  command "cd #{node['drupal-env']['dir']}; /usr/bin/php cron.php"
+  user    "#{node['apache']['user']}"
 end
 
 
