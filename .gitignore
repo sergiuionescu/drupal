@@ -16,3 +16,4 @@ bin/*
 .kitchen.local.yml
 .idea
 atlassian-ide-plugin.xml
+src/
