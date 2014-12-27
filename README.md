@@ -18,9 +18,9 @@ Requirements
 Extra development requirements
 -----------------------------
 * vagrant >= 1.5.2
-* vagrant-berkshelf (vagrant plugin install vagrant-berkshelf)
 * chef dk >= 0.2.0
 * virtualbox: tested on 4.1.14
+* vagrant-berkshelf (vagrant plugin install vagrant-berkshelf) - Optional, kitchen converge can be used to launch the vm instead of vagrant up
 
 * Note: there is currently an issue with running provision a second time with vagrant-berkshelf 4.0.0. See https://github.com/berkshelf/vagrant-berkshelf/issues/237
 
@@ -35,7 +35,7 @@ How to test dev environment
 ---------------------------
 - Clone the repository
 - Go to the project root
-- Run "vagrant up"
+- Run kitchen converge (or "vagrant up" if you wish to use vagrant-berkshelf)
 
 
 Todos
