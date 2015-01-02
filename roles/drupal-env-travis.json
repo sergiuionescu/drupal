@@ -1,0 +1,14 @@
+{
+    "name": "drupal-env-travis",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Drupal environment configuration with travis.ci specific configuration.",
+    "run_list": [
+        "role[drupal-env]"
+    ],
+    "default_attributes": {
+        "php" : {
+            "install_method": "source"
+        }
+    }
+}
