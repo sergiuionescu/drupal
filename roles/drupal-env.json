@@ -4,13 +4,27 @@
     "json_class": "Chef::Role",
     "description": "Drupal environment configuration.",
     "run_list": [
-        "recipe[drupal-env]"
+        "recipe[drupal-env]",
+        "recipe[lamp::nfs]",
+        "recipe[lamp::xdebug]"
     ],
     "default_attributes": {
+        "apache": {
+            "mpm": "worker"
+        },
         "mysql": {
             "server_root_password": "root",
             "server_repl_password": "root",
             "server_debian_password": "root"
+        },
+        "lamp": {
+            "xdebug": {
+                "directives": {
+                    "remote_host": "10.0.2.2",
+                    "remote_enable": 0,
+                    "remote_autostart": 1
+                }
+            }
         }
     }
 }
