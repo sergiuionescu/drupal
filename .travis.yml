@@ -11,7 +11,6 @@ cache:
 before_install:
   - "wget -N -P packages/ http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb"
   - "sudo dpkg -i packages/chefdk_0.3.0-1_amd64.deb"
-  - "sudo aptitude search php"
   - "php -v"
 script:
   - bundle exec rake knife
