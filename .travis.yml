@@ -4,7 +4,7 @@ gemfile:
 rvm:
   - 2.1.1
 env:
-  - RUNLIST=drupal-env-travis.json
+  - RUNLIST=drupal-env.json
 cache:
   directories:
     - packages

@@ -1,5 +1,5 @@
 {
     "run_list": [
-        "role[drupal-env]"
+        "role[drupal-env-travis]"
     ]
 }
