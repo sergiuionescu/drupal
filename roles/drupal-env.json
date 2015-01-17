@@ -10,7 +10,7 @@
     ],
     "default_attributes": {
         "apache": {
-            "mpm": "worker"
+            "mpm": "prefork"
         },
         "mysql": {
             "server_root_password": "",
