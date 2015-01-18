@@ -145,6 +145,4 @@ The project root directory is mounted inside the dev virtual machine directory u
 
 Todos
 -----
-- Find/create drush cookbook
-- Find/create drupal cookbook
-- Update documentation
+- Expose an interface for creating source symlinks
