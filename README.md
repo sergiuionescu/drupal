@@ -3,13 +3,10 @@ drupal-env
 
 Drupal environment with Berkshelf Chef and Vagrant support
 
-Note
-----
-At this point only the lamp environment is available
-
 
 Requirements
 ------------
+* chef-dk: 0.3.0
 * chef-solo: tested on 11.8.2
 * berkshelf: tested on 3.1.5
 
