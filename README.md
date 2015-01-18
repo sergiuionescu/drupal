@@ -35,6 +35,111 @@ How to test dev environment
 - Go to the project root
 - Run kitchen converge (or "vagrant up" if you wish to use vagrant-berkshelf)
 
+Customizing your dev environment
+--------------------------------
+The role used to provision the dev environment, you can create your own role to fit your needs:
+```json
+{
+    "name": "drupal-env",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Drupal environment configuration.",
+    "run_list": [
+        "recipe[drupal-env]",
+        "recipe[lamp::nfs]",
+        "recipe[lamp::xdebug]"
+    ],
+    "default_attributes": {
+        "apache": {
+            "mpm": "prefork"
+        },
+        "mysql": {
+            "server_root_password": "",
+            "server_repl_password": "",
+            "server_debian_password": ""
+        },
+        "lamp": {
+            "xdebug": {
+                "directives": {
+                    "remote_host": "10.0.2.2",
+                    "remote_enable": 0,
+                    "remote_autostart": 1
+                }
+            }
+        }
+    }
+}
+```
+
+Details:
+```json
+"run_list": [
+        "recipe[drupal-env]",
+        "recipe[lamp::nfs]",
+        "recipe[lamp::xdebug]"
+    ],
+```
+The recipes lamp::nfs and lamp::xdebug are only required for the dev environment to expose a nfs share of your /var/www directory and install the xdebug extension for php.
+
+
+```json
+"apache": {
+    "mpm": "prefork"
+}
+```
+Install apache with mpm prefork - compatible with non thread safe php.
+
+
+```json
+"mysql": {
+    "server_root_password": "",
+    "server_repl_password": "",
+    "server_debian_password": ""
+}
+```
+Configure your mysql dev server credentials.
+
+```json
+"lamp": {
+    "xdebug": {
+        "directives": {
+            "remote_host": "10.0.2.2",
+            "remote_enable": 0,
+            "remote_autostart": 1
+        }
+    }
+}
+```
+Set the xdebug configuration, all xdebug configuration directives are supported here. In this example xdebug is connecting back on the vm's NAT interface, 
+configured to start the debugging session automatically but disabled. You need to enable it manually by editing your xdebug.ini.
+
+Customizing the role in production
+----------------------------------
+
+An example role for production would be the following:
+```json
+{
+    "name": "drupal-env",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "description": "Drupal environment configuration.",
+    "run_list": [
+        "recipe[drupal-env]"
+    ],
+    "default_attributes": {
+        "apache": {
+            "mpm": "prefork"
+        },
+        "mysql": {
+            "server_root_password": "supersecretpassword",
+            "server_repl_password": "supersecretpassword",
+            "server_debian_password": "supersecretpassword"
+        }
+    }
+}
+```
+Notice that you can drop the dependencies on nfs and xdebug, you should also set a more secure password for your mysql server.
+
 Source mounts
 -------------
 
