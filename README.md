@@ -30,7 +30,7 @@ How to test dev environment
 ---------------------------
 - Clone the repository
 - Go to the project root
-- Run kitchen converge (or "vagrant up" if you wish to use vagrant-berkshelf)
+- Run "kitchen converge default-ubuntu-1404" (or "vagrant up" if you wish to use vagrant-berkshelf)
 
 Customizing your dev environment
 --------------------------------
