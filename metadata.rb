@@ -6,5 +6,8 @@ description      'Installs/Configures drupal-env'
 long_description 'Installs/Configures drupal-env'
 version          '0.1.0'
 
-depends "lamp", "~> 0.1.4"
-depends "drush", "~> 0.1.0"
+depends 'lamp', '~> 0.1.4'
+depends 'drush', '~> 0.1.0'
+depends 'database', '~> 2.3.0'
+depends 'php'
+depends 'cron', '~> 1.4.0'
