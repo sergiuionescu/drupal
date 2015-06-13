@@ -51,7 +51,7 @@ execute "drush-site-install" do
   #{node['drupal-env']['site-install']['site-name'].empty? ? '' : '--site-name='}#{node['drupal-env']['site-install']['site-name']} \
   #{node['drupal-env']['site-install']['sites-subdir'].empty? ? '' : '--sites-subdir='}#{node['drupal-env']['site-install']['sites-subdir']} \
   #{node['drupal-env']['site-install']['locale'].empty? ? '' : '--locale='}#{node['drupal-env']['site-install']['locale']}"
-  not_if "drush -r #{node['drupal-env']['dir']} status | grep #{node['drupal-env']['version']}"
+  not_if "drush -r #{node['drupal-env']['dir']} status | grep Drupal |grep #{node['drupal-env']['version']}"
 end
 
 execute "drupal-permissions" do
