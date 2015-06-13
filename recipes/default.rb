@@ -54,18 +54,18 @@ execute "#{node['drupal-env']['site-install']['name']} drush-site-install" do
   not_if "drush -r #{node['drupal-env']['dir']} status | grep Drupal |grep #{node['drupal-env']['version']}"
 end
 
-execute "#{node['drupal-env']['site-install']['name']} permissions" do
+execute "#{node['drupal-env']['site-install']['site-name']} permissions" do
   command "chown #{node['apache']['user']}:#{node['apache']['group']} -R #{node['drupal-env']['dir']}"
 end
 
-web_app node['drupal-env']['site-install']['name'] do
+web_app node['drupal-env']['site-install']['site-name'] do
   template "drupal.conf.erb"
   docroot node['drupal-env']['dir']
   server_name node['fqdn']
   server_aliases node['drupal-env']['aliases']
 end
 
-cron_d "#{node['drupal-env']['site-install']['name']} cron" do
+cron_d "#{node['drupal-env']['site-install']['site-name']} cron" do
   command "cd #{node['drupal-env']['dir']}; /usr/bin/php cron.php"
   user    "#{node['apache']['user']}"
 end
