@@ -1,4 +1,6 @@
 DEPENDENCIES
+  cron
+  database
   drupal-env
     path: .
     metadata: true
@@ -8,7 +10,7 @@ DEPENDENCIES
   lamp
     git: git://github.com/sergiuionescu/lamp.git
     revision: 84bc943db491d83a195f197d04c2a580877f8e02
-  mysql-chef_gem (= 0.0.5)
+  mysql-chef_gem
   php
     git: git://github.com/sergiuionescu/php.git
     revision: fe44690d8fcd73012ea0c607f32ded4d6b113ddc
@@ -24,7 +26,12 @@ GRAPH
   composer (2.1.0)
     php (>= 0.0.0)
     windows (>= 0.0.0)
+  cron (1.6.1)
+  database (4.0.6)
+    postgresql (>= 1.0.0)
   drupal-env (0.1.1)
+    cron (>= 0.0.0)
+    database (>= 0.0.0)
     drush (>= 0.0.0)
     lamp (>= 0.0.0)
     php (>= 0.0.0)
@@ -45,11 +52,12 @@ GRAPH
   logrotate (1.9.1)
   mysql (5.5.3)
     yum-mysql-community (>= 0.0.0)
-  mysql-chef_gem (0.0.5)
+  mysql-chef_gem (1.0.0)
     build-essential (>= 0.0.0)
-    mysql (>= 0.0.0)
   nfs (2.1.0)
     line (>= 0.0.0)
+  openssl (4.1.1)
+    chef-sugar (>= 0.0.0)
   php (1.5.0)
     build-essential (>= 0.0.0)
     iis (>= 0.0.0)
@@ -57,6 +65,10 @@ GRAPH
     windows (>= 0.0.0)
     xml (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  postgresql (3.4.16)
+    apt (>= 1.9.0)
+    build-essential (>= 0.0.0)
+    openssl (>= 0.0.0)
   sendmail (0.1.0)
   vim (1.1.2)
   windows (1.37.0)
