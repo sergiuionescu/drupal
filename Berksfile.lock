@@ -10,7 +10,7 @@ DEPENDENCIES
   lamp
     git: git://github.com/sergiuionescu/lamp.git
     revision: 84bc943db491d83a195f197d04c2a580877f8e02
-  mysql-chef_gem
+  mysql-chef_gem (= 0.0.5)
   php
     git: git://github.com/sergiuionescu/php.git
     revision: fe44690d8fcd73012ea0c607f32ded4d6b113ddc
@@ -52,8 +52,9 @@ GRAPH
   logrotate (1.9.1)
   mysql (5.5.3)
     yum-mysql-community (>= 0.0.0)
-  mysql-chef_gem (1.0.0)
+  mysql-chef_gem (0.0.5)
     build-essential (>= 0.0.0)
+    mysql (>= 0.0.0)
   nfs (2.1.0)
     line (>= 0.0.0)
   openssl (4.1.1)
