@@ -7,8 +7,10 @@
         "role[drupal-env]"
     ],
     "default_attributes": {
-        "php" : {
-            "install_method": "source"
+        "lamp": {
+            "xdebug": {
+                "version": "2.0.3"
+            }
         }
     }
 }

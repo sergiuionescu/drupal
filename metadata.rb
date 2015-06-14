@@ -4,7 +4,7 @@ maintainer_email 'sergiu.ionescu@gmail.com'
 license          'Apache 2.0'
 description      'Installs/Configures drupal-env'
 long_description 'Installs/Configures drupal-env'
-version          '0.1.1'
+version          '0.1.2'
 
 depends 'lamp'
 depends 'drush'

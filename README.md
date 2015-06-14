@@ -50,11 +50,6 @@ The role used to provision the dev environment, you can create your own role to 
         "apache": {
             "mpm": "prefork"
         },
-        "mysql": {
-            "server_root_password": "",
-            "server_repl_password": "",
-            "server_debian_password": ""
-        },
         "lamp": {
             "xdebug": {
                 "directives": {
@@ -127,10 +122,10 @@ An example role for production would be the following:
         "apache": {
             "mpm": "prefork"
         },
-        "mysql": {
-            "server_root_password": "supersecretpassword",
-            "server_repl_password": "supersecretpassword",
-            "server_debian_password": "supersecretpassword"
+        "lamp": {
+            "mysql": {
+                "root_password": "mysupersecretpassword"
+            }
         }
     }
 }
