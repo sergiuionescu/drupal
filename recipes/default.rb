@@ -13,7 +13,6 @@ include_recipe 'lamp'
 include_recipe 'drush'
 include_recipe 'php::module_gd'
 include_recipe 'cron'
-include_recipe 'database'
 
 package "php5-json" do
   action :install

@@ -1,4 +1,3 @@
-include_recipe 'database::mysql'
 
 mysql_connection_info = {:host => node['drupal-env']['site-install']['db-url']['host'],
                          :username => 'root',

@@ -26,7 +26,7 @@ GRAPH
   cron (1.6.1)
   database (4.0.6)
     postgresql (>= 1.0.0)
-  drupal-env (0.1.1)
+  drupal-env (0.1.2)
     cron (>= 0.0.0)
     database (>= 0.0.0)
     drush (>= 0.0.0)
