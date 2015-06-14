@@ -67,7 +67,7 @@ end
 
 cron_d "#{node['drupal-env']['site-install']['site-name']} cron" do
   command "cd #{node['drupal-env']['dir']}; /usr/bin/php cron.php"
-  user    "#{node['apache']['user']}"
+  user    node['apache']['user']
 end
 
 
