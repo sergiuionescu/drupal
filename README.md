@@ -47,9 +47,6 @@ The role used to provision the dev environment, you can create your own role to 
         "recipe[lamp::xdebug]"
     ],
     "default_attributes": {
-        "apache": {
-            "mpm": "prefork"
-        },
         "lamp": {
             "xdebug": {
                 "directives": {
@@ -119,9 +116,6 @@ An example role for production would be the following:
         "recipe[drupal-env]"
     ],
     "default_attributes": {
-        "apache": {
-            "mpm": "prefork"
-        },
         "lamp": {
             "mysql": {
                 "root_password": "mysupersecretpassword"
