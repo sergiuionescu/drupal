@@ -1,4 +1,9 @@
 
+mysql2_chef_gem 'default' do
+  client_version node['mysql']['version'] if node['mysql'] && node['mysql']['version']
+  action :install
+end
+
 mysql_connection_info = {:host => node['drupal-env']['site-install']['db-url']['host'],
                          :username => 'root',
                          :password => node['lamp']['mysql']['root_password']}

@@ -17,7 +17,7 @@ default['drupal-env']['site-install']['db-url']['user'] = 'drupal'
 #Database password used
 default['drupal-env']['site-install']['db-url']['password'] = 'drupal'
 #Database host used
-default['drupal-env']['site-install']['db-url']['host'] = 'localhost'
+default['drupal-env']['site-install']['db-url']['host'] = '127.0.0.1'
 #Database schema/database name
 default['drupal-env']['site-install']['db-url']['database'] = 'drupal'
 
@@ -30,7 +30,7 @@ default['drupal-env']['site-install']['db-su'] = ''
 #Password for the "db-su" account. Optional.
 default['drupal-env']['site-install']['db-su-pw'] = ''
 #Defaults to Site-Install
-default['drupal-env']['site-install']['site-name'] = ''
+default['drupal-env']['site-install']['site-name'] = 'drupal'
 #Name of directory under 'sites' which should be created. Only needed when the subdirectory does not already exist. Defaults to 'default'
 default['drupal-env']['site-install']['sites-subdir'] = ''
 #A short language code. Sets the default site language. Language files must already be present. You may use download command to get them.
