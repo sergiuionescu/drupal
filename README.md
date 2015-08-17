@@ -72,14 +72,6 @@ The recipes lamp::nfs and lamp::xdebug are only required for the dev environment
 
 
 ```json
-"apache": {
-    "mpm": "prefork"
-}
-```
-Install apache with mpm prefork - compatible with non thread safe php.
-
-
-```json
 "mysql": {
     "server_root_password": "",
     "server_repl_password": "",
