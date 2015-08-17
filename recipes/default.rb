@@ -44,7 +44,7 @@ execute "#{node['drupal-env']['site-install']['name']} drush-site-install" do
   --account-name=#{node['drupal-env']['site-install']['account-name']} \
   --account-pass=#{node['drupal-env']['site-install']['account-pass']} \
   --site-name=#{node['drupal-env']['site-install']['name']} \
-  --db-url=#{node['drupal-env']['site-install']['db-url']['service']}://#{node['drupal-env']['site-install']['db-url']['user']}:'#{node['drupal-env']['site-install']['db-url']['password']}'@localhost/#{node['drupal-env']['site-install']['db-url']['database']} \
+  --db-url=#{node['drupal-env']['site-install']['db-url']['service']}://#{node['drupal-env']['site-install']['db-url']['user']}:'#{node['drupal-env']['site-install']['db-url']['password']}'@#{node['drupal-env']['site-install']['db-url']['host']}/#{node['drupal-env']['site-install']['db-url']['database']} \
   #{node['drupal-env']['site-install']['profile'].empty? ? '' : '--profile='}#{node['drupal-env']['site-install']['profile']} \
   #{node['drupal-env']['site-install']['db-su'].empty? ? '' : '--db-su='}#{node['drupal-env']['site-install']['db-su']} \
   #{node['drupal-env']['site-install']['db-su-pw'].empty? ? '' : '--db-su-pw='}#{node['drupal-env']['site-install']['db-su-pw']} \
@@ -67,7 +67,7 @@ end
 
 cron_d "#{node['drupal-env']['site-install']['site-name']} cron" do
   command "cd #{node['drupal-env']['dir']}; /usr/bin/php cron.php"
-  user    "#{node['apache']['user']}"
+  user    node['apache']['user']
 end
 
 
