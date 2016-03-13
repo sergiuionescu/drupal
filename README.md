@@ -1,4 +1,4 @@
-drupal-env
+drupal
 ==========
 
 Drupal environment with Berkshelf Chef and Vagrant support
@@ -37,12 +37,12 @@ Customizing your dev environment
 The role used to provision the dev environment, you can create your own role to fit your needs:
 ```json
 {
-    "name": "drupal-env",
+    "name": "drupal",
     "chef_type": "role",
     "json_class": "Chef::Role",
     "description": "Drupal environment configuration.",
     "run_list": [
-        "recipe[drupal-env]",
+        "recipe[drupal]",
         "recipe[lamp::nfs]",
         "recipe[lamp::xdebug]"
     ],
@@ -63,7 +63,7 @@ The role used to provision the dev environment, you can create your own role to 
 Details:
 ```json
 "run_list": [
-        "recipe[drupal-env]",
+        "recipe[drupal]",
         "recipe[lamp::nfs]",
         "recipe[lamp::xdebug]"
     ],
@@ -100,12 +100,12 @@ Customizing the role in production
 An example role for production would be the following:
 ```json
 {
-    "name": "drupal-env",
+    "name": "drupal",
     "chef_type": "role",
     "json_class": "Chef::Role",
     "description": "Drupal environment configuration.",
     "run_list": [
-        "recipe[drupal-env]"
+        "recipe[drupal]"
     ],
     "default_attributes": {
         "lamp": {
