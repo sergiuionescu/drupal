@@ -22,7 +22,7 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.roles_path = "roles"
-    chef.add_role "drupal-env"
+    chef.add_role "drupal"
   end
 
 end

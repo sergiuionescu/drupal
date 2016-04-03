@@ -33,7 +33,7 @@ log_location       STDOUT
 # file_cache_path, above.
 
 cookbook_path "/tmp/cookbooks/"
-role_path "/home/travis/build/sergiuionescu/drupal-env/roles"
+role_path "/home/travis/build/sergiuionescu/drupal/roles"
 
 # recipe_url specifies a remote URL to retrieve a tarball of cookbooks.
 # Corresponds to chef-solo -r

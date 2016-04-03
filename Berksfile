@@ -4,6 +4,4 @@ metadata
 cookbook 'php', git: 'git://github.com/sergiuionescu/php.git'
 cookbook 'lamp', git: 'git://github.com/sergiuionescu/lamp.git'
 cookbook 'drush', git: 'git://github.com/sergiuionescu/drush.git'
-cookbook 'mysql2_chef_gem'
 cookbook 'database'
-cookbook 'cron'
