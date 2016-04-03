@@ -2,6 +2,7 @@ drupal
 ==========
 
 Drupal environment with Berkshelf Chef and Vagrant support
+
 Php7 support via ppa:ondrej/php.
 
 Requirements
@@ -13,7 +14,6 @@ Requirements
 Extra development requirements
 -----------------------------
 * vagrant
-* chef dk
 * virtualbox
 
 Resources links
