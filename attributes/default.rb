@@ -1,5 +1,4 @@
 
-default['drupal']['dir'] = '/var/www/drupal'
 default['drupal']['version'] = '8'
 
 default['drupal']['aliases'] = ['drupal.local']

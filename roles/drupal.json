@@ -5,6 +5,7 @@
     "description": "Drupal environment configuration.",
     "run_list": [
         "recipe[drupal]",
+        "recipe[drupal::test]",
         "recipe[lamp::nfs]",
         "recipe[lamp::xdebug]"
     ],
@@ -30,6 +31,9 @@
                 "php7.0-cli",
                 "php7.0-json",
                 "php7.0-curl",
+                "php7.0-mbstring",
+                "php7.0-gd",
+                "php-mysql",
                 "php-pear"
             ],
             "mysql": {

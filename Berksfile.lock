@@ -1,6 +1,6 @@
 DEPENDENCIES
   database
-  drupal-env
+  drupal
     path: .
     metadata: true
   drush
@@ -9,7 +9,6 @@ DEPENDENCIES
   lamp
     git: git://github.com/sergiuionescu/lamp.git
     revision: 7366931e896d49c8ea3e78428cfb38fcca398b0d
-  mysql2_chef_gem
   php
     git: git://github.com/sergiuionescu/php.git
     revision: 8e64558a173b78bd99822301f7099644e4e2fd44
@@ -30,7 +29,7 @@ GRAPH
   database (4.0.9)
     postgresql (>= 1.0.0)
   dmg (2.3.0)
-  drupal-env (0.1.2)
+  drupal (1.0.0)
     database (>= 0.0.0)
     drush (>= 0.0.0)
     lamp (>= 0.0.0)
